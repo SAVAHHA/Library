@@ -6,6 +6,24 @@
              xmlns:local="clr-namespace:Library"
              x:Class="Library.Pages.MainPage">
 
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <Shell.SearchHandler>
         <controls:BooksSearchHandler Placeholder="Поиск"
                                      x:Name="search"
@@ -36,6 +54,19 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="AddButton" Grid.Row="0" Grid.Column="0" Text="+" TextColor="White" FontSize="Title" BorderRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="#5f8806" Clicked="AddButton_Clicked"></Button>
+            </Grid>
+            
+            <Grid x:Name="Panel2Grid" VerticalOptions="Start" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="75" HorizontalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="FilterButton" Grid.Row="1" Grid.Column="0" Text="#" TextColor="White" FontSize="Title" BorderRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="#e687b2" Clicked="FilterButton_Clicked"></Button>
             </Grid>
         </Grid>
     </ContentPage.Content>

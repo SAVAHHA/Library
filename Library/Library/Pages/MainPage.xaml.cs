@@ -80,5 +80,10 @@ namespace Library.Pages
         {
             await Shell.Current.GoToAsync("addbookpage");
         }
+
+        private void FilterButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

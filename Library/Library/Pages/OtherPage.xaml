@@ -4,9 +4,15 @@
              x:Class="Library.Pages.OtherPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <BoxView BackgroundColor="#a9a29e" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="10"></BoxView>
+                <Label Text="dfsgehrjtmhngbfvdfg" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
