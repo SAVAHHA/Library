@@ -31,12 +31,12 @@
     </Shell.Resources>
 
     <TabBar>
-        <Tab Title="Main" Style="{StaticResource SavahhaShell}">
+        <Tab Title="Библиотека" Style="{StaticResource SavahhaShell}" Icon="ic_action_class">
             <ShellContent Title="Main" Route="main" ContentTemplate="{DataTemplate pages:MainPage}">
 
             </ShellContent>
         </Tab>
-        <Tab Title="Other" Style="{StaticResource SavahhaShell}">
+        <Tab Title="Параметры" Style="{StaticResource SavahhaShell}" Icon="ic_action_settings">
             <ShellContent Title="Other" Route="other" ContentTemplate="{DataTemplate pages:OtherPage}">
                 
             </ShellContent>
