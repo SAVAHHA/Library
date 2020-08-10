@@ -15,6 +15,7 @@ namespace Library
     {
         //public string BookId
         //{
+
         //    set
         //    {
         //         BindingContext = BookData.Books.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
