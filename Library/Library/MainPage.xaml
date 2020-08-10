@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Library.Controls"
+             xmlns:data="clr-namespace:Library.Data"
+             xmlns:local="clr-namespace:Library"
+             x:Class="Library.MainPage">
+
+    <Shell.SearchHandler>
+        <controls:BooksSearchHandler Placeholder="Поиск"
+                                     x:Name="search"
+                                    ShowsResults="True"
+                                    ItemTemplate="{StaticResource BookSearchTemplate}"></controls:BooksSearchHandler>
+    </Shell.SearchHandler>
+    
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <ScrollView Padding="0" Scrolled="ScrollView_Scrolled">
+                <StackLayout x:Name="mainStackLayout">
+                    <CollectionView Margin="0,10,0,0"
+                    x:Name="mainCollectionView"
+                    ItemTemplate="{StaticResource BookTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+                        </CollectionView>
+                </StackLayout>
+            </ScrollView>
+            <Grid x:Name="PanelGrid" VerticalOptions="End" BackgroundColor="Transparent" HeightRequest="80" WidthRequest="75" HorizontalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="AddButton" Grid.Row="0" Grid.Column="0" Text="+" TextColor="White" FontSize="Title" BorderRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="#5f8806" Clicked="AddButton_Clicked"></Button>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>
