@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:Library.Controls"
              xmlns:data="clr-namespace:Library.Data"
              xmlns:local="clr-namespace:Library"
-             x:Class="Library.MainPage">
+             x:Class="Library.Pages.MainPage">
 
     <Shell.SearchHandler>
         <controls:BooksSearchHandler Placeholder="Поиск"

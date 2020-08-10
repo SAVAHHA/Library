@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Library
+namespace Library.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OtherPage : ContentPage

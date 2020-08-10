@@ -7,7 +7,7 @@ using Library.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Library
+namespace Library.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
    // [QueryProperty("BookId", "bookid")]
