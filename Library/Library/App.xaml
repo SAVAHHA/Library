@@ -22,6 +22,22 @@
             </Grid>
         </DataTemplate>
 
+        <DataTemplate x:Key="FlatTemplate">
+            <Grid Padding="20,10,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Text="{Binding Name}"
+                       FontAttributes="Bold"></Label>
+            </Grid>
+        </DataTemplate>
+
         <DataTemplate x:Key="BookSearchTemplate">
             <Grid Padding="10" ColumnSpacing="10">
                 <Grid.ColumnDefinitions>

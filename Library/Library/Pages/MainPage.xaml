@@ -35,6 +35,15 @@
         <Grid RowSpacing="0">
             <ScrollView Padding="0" Scrolled="ScrollView_Scrolled">
                 <StackLayout x:Name="mainStackLayout">
+                    
+                    <StackLayout x:Name="addBookStackLayout" IsVisible="False">
+                        <Label Text="Название книги"></Label>
+                        <Entry x:Name="nameEntry"></Entry>
+                        <Label Text="Автор"></Label>
+                        <Entry x:Name="authorEntry"></Entry>
+                        <Button x:Name="confirmButton" Text="y" Clicked="confirmButton_Clicked"></Button>
+                    </StackLayout>
+                    
                     <CollectionView Margin="0,10,0,0"
                     x:Name="mainCollectionView"
                     ItemTemplate="{StaticResource BookTemplate}"

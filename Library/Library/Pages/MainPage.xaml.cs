@@ -76,14 +76,28 @@ namespace Library.Pages
             translating = false;
         }
 
-        private async void AddButton_Clicked(object sender, EventArgs e)
+        private void AddButton_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("addbookpage");
+            addBookStackLayout.IsVisible = true;
+           // await Shell.Current.GoToAsync("addbookpage");
         }
 
         private void FilterButton_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private async void confirmButton_Clicked(object sender, EventArgs e)
+        {
+            string name = nameEntry.Text;
+            string author = authorEntry.Text;
+            var newBook = new Book { Author = author, Name = name };
+            await App.BookDatabase.SaveBookAsync(newBook);
+
+
+            App.Current.MainPage = new ShellPage();
+
+            await Shell.Current.GoToAsync("///main");
         }
     }
 }

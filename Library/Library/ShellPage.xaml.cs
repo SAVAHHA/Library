@@ -21,7 +21,7 @@ namespace Library
 
         void RegisterRoutes()
         {
-            routes.Add("addbookpage", typeof(AddBookPage));
+            //routes.Add("addbookpage", typeof(AddBookPage));
             routes.Add("bookdetailpage", typeof(BookDetailPage));
 
             foreach (var item in routes)
