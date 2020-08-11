@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace Library.Model
 {
+    [Table("Books")]
     public class Book
     {
-        public int ID_Book { get; set; }
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
         public string Illustrator { get; set; }

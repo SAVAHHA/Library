@@ -5,37 +5,98 @@ using Library.Data;
 using System.IO;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Library.Model;
 
 namespace Library
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = "table.db";
-        static Table database;
-        public static Table Database
+        public const string BOOK_DATABASE_NAME = "booktable.db";
+        public const string FLAT_DATABASE_NAME = "flattable.db";
+        public const string WARDROBE_DATABASE_NAME = "wardrobetable.db";
+
+        static BookTable bookDatabase;
+        static FlatTable flatDatabase;
+        static WardrobeTable wardrobeDatabase;
+
+        public static BookTable BookDatabase
         {
             get
             {
-                if (database == null)
+                if (bookDatabase == null)
                 {
-                    database = new Table(
+                    bookDatabase = new BookTable(
                         Path.Combine(
-                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
+                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), BOOK_DATABASE_NAME));
                 }
-                return database;
+                return bookDatabase;
             }
         }
 
-        public static List<BookTable> Books
+        public static FlatTable FlatDatabase
         {
             get
             {
-                List<BookTable> books = new List<BookTable>();
-                if (App.Database.GetBooksAsync().Result != null)
+                if (flatDatabase == null)
                 {
-                    books = App.Database.GetBooksAsync().Result;
+                    flatDatabase = new FlatTable(
+                        Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FLAT_DATABASE_NAME));
+                }
+                return flatDatabase;
+            }
+        }
+
+        public static WardrobeTable WardrobeDatabase
+        {
+            get
+            {
+                if (wardrobeDatabase == null)
+                {
+                    wardrobeDatabase = new WardrobeTable(
+                        Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), WARDROBE_DATABASE_NAME));
+                }
+                return wardrobeDatabase;
+            }
+        }
+
+        public static List<Book> Books
+        {
+            get
+            {
+                List<Book> books = new List<Book>();
+                if (App.BookDatabase.GetBooksAsync().Result != null)
+                {
+                    books = App.BookDatabase.GetBooksAsync().Result;
                 }
                 return books;
+            }
+        }
+
+        public static List<Flat> Flats
+        {
+            get
+            {
+                List<Flat> flats = new List<Flat>();
+                if (App.FlatDatabase.GetFlatsAsync().Result != null)
+                {
+                    flats = App.FlatDatabase.GetFlatsAsync().Result;
+                }
+                return flats;
+            }
+        }
+
+        public static List<Wardrobe> Wardrobes
+        {
+            get
+            {
+                List<Wardrobe> wardrobes = new List<Wardrobe>();
+                if (App.WardrobeDatabase.GetWardrobesAsync().Result != null)
+                {
+                    wardrobes = App.WardrobeDatabase.GetWardrobesAsync().Result;
+                }
+                return wardrobes;
             }
         }
 

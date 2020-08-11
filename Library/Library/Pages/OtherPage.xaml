@@ -11,7 +11,7 @@
                 </Grid.RowDefinitions>
 
                 <BoxView BackgroundColor="#a9a29e" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="10"></BoxView>
-                <Label Text="dfsgehrjtmhngbfvdfg" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label Text="Квартиры" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

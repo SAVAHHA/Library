@@ -16,7 +16,7 @@ namespace Library.Pages
         private double lastScrollPoint = 0;
         private bool translating = false;
         private bool isVisible = true;
-        public static List<BookTable> _books
+        public static List<Book> _books
         {
             get
             {
@@ -38,12 +38,12 @@ namespace Library.Pages
         {
             //var newBook = new BookTable { Author = "TTT", Name = "fff" };
             //await App.Database.SaveBookAsync(newBook);
-            await DisplayAlert(App.Books[2].Author, App.Database.GetBooksAsync().Result.Count().ToString(), "OK");
+            await DisplayAlert(App.Books[2].Author, App.BookDatabase.GetBooksAsync().Result.Count().ToString(), "OK");
         }
 
         async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string bookId = (e.CurrentSelection.FirstOrDefault() as BookTable).Name;
+            string bookId = (e.CurrentSelection.FirstOrDefault() as Book).Name;
             
             //await Shell.Current.GoToAsync($"bookdetailpage?bookid={bookId}");
             await Shell.Current.GoToAsync("bookdetailpage");
