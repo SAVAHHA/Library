@@ -87,5 +87,10 @@ namespace Library.Pages
 
             await Shell.Current.GoToAsync("///main");
         }
+
+        private void hideBookAddButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

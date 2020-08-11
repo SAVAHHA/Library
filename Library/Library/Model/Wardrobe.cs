@@ -12,5 +12,6 @@ namespace Library.Model
         public int ID { get; set; }
         public string Name { get; set; }
         public int ID_Flat { get; set; }
+        public string FlatName { get; set; }
     }
 }

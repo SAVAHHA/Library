@@ -22,6 +22,12 @@ namespace Library.Pages
                 flatCollectionView.ItemsSource = App.Flats;
             }
 
+            if (LoadWardrobes() == true)
+            {
+                wardrobeCollectionViewStackLayout.IsVisible = true;
+                wardrobeCollectionView.ItemsSource = App.Wardrobes;
+            }
+
         }
 
         private bool LoadFlats()
@@ -43,6 +49,20 @@ namespace Library.Pages
             return check;
         }
 
+        private bool LoadWardrobes()
+        {
+            bool check = false;
+            if (App.Wardrobes != null)
+            {
+                check = true;
+            }
+            else
+            {
+                wardrobesLabel.Text = "Нет шкафов";
+            }
+            return check;
+        }
+
         private void AddFlatButton_Clicked(object sender, EventArgs e)
         {
             addFlatStackLayout.IsVisible = true;
@@ -50,7 +70,7 @@ namespace Library.Pages
 
         private void AddWardrobeButton_Clicked(object sender, EventArgs e)
         {
-
+            addWardrobeStackLayout.IsVisible = true;
         }
 
         private void flatCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,6 +88,43 @@ namespace Library.Pages
             App.Current.MainPage = new ShellPage();
 
             await Shell.Current.GoToAsync("///other");
+        }
+
+        private async void confirmWardrobeButton_Clicked(object sender, EventArgs e)
+        {
+            string name = nameWardrobeEntry.Text;
+            string flatName = flatWardrobeEntry.Text;
+            int flatID = 0;
+            foreach (var flat in App.Flats)
+            {
+                if (flat.Name == flatName)
+                {
+                    flatID = flat.ID;
+                }
+            }
+            
+            var newWardrobe = new Wardrobe { Name = name, ID_Flat = flatID };
+            await App.WardrobeDatabase.SaveWardrobeAsync(newWardrobe);
+
+
+            App.Current.MainPage = new ShellPage();
+
+            await Shell.Current.GoToAsync("///other");
+        }
+
+        private void hideWardrobeButton_Clicked(object sender, EventArgs e)
+        {
+            addWardrobeStackLayout.IsVisible = false;
+        }
+
+        private void hideFlatButton_Clicked(object sender, EventArgs e)
+        {
+            addFlatStackLayout.IsVisible = false;
+        }
+
+        private void wardrobeCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

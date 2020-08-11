@@ -37,6 +37,25 @@
             </Grid>
         </DataTemplate>
 
+        <DataTemplate x:Key="WardrobeTemplate">
+            <Grid Padding="20,10,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="{Binding Name}"
+                       FontAttributes="Bold"></Label>
+
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="{Binding ID_Flat}"></Label>
+            </Grid>
+        </DataTemplate>
+
         <DataTemplate x:Key="BookSearchTemplate">
             <Grid Padding="10" ColumnSpacing="10">
                 <Grid.ColumnDefinitions>

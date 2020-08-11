@@ -37,11 +37,19 @@
                 <StackLayout x:Name="mainStackLayout">
                     
                     <StackLayout x:Name="addBookStackLayout" IsVisible="False">
-                        <Label Text="Название книги"></Label>
-                        <Entry x:Name="nameEntry"></Entry>
-                        <Label Text="Автор"></Label>
-                        <Entry x:Name="authorEntry"></Entry>
-                        <Button x:Name="confirmButton" Text="y" Clicked="confirmButton_Clicked"></Button>
+                        <Label Text="Название книги" Margin="10"></Label>
+                        <Entry x:Name="nameEntry" Margin="10,0,10,0"></Entry>
+                        <Label Text="Автор" Margin="10"></Label>
+                        <Entry x:Name="authorEntry" Margin="10,0,10,0"></Entry>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Button x:Name="hideBookAddButton" Text="Скрыть" Clicked="hideBookAddButton_Clicked" HorizontalOptions="Start" Margin="10"></Button>
+                            <Button x:Name="confirmButton" Text="Сохранить" Clicked="confirmButton_Clicked" Margin="10" HorizontalOptions="End"></Button>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout x:Name="filterBookStackLayout" IsVisible="False">
+                        
                     </StackLayout>
                     
                     <CollectionView Margin="0,10,0,0"
