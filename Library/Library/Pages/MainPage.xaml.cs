@@ -27,25 +27,14 @@ namespace Library.Pages
         public MainPage()
         {
             InitializeComponent();
-            //D();
             mainCollectionView.ItemsSource = _books;
             search.ItemsSource = _books;
             search.Books = _books;
-           // BookData.Books.Add(new Book() { Name = "Hello", Author = "Andrew" });
-        }
-
-        private async void D()
-        {
-            //var newBook = new BookTable { Author = "TTT", Name = "fff" };
-            //await App.Database.SaveBookAsync(newBook);
-            await DisplayAlert(App.Books[2].Author, App.BookDatabase.GetBooksAsync().Result.Count().ToString(), "OK");
         }
 
         async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string bookId = (e.CurrentSelection.FirstOrDefault() as Book).Name;
-            
-            //await Shell.Current.GoToAsync($"bookdetailpage?bookid={bookId}");
             await Shell.Current.GoToAsync("bookdetailpage");
         }
         private async void ScrollView_Scrolled(object sender, ScrolledEventArgs e)
@@ -79,7 +68,6 @@ namespace Library.Pages
         private void AddButton_Clicked(object sender, EventArgs e)
         {
             addBookStackLayout.IsVisible = true;
-           // await Shell.Current.GoToAsync("addbookpage");
         }
 
         private void FilterButton_Clicked(object sender, EventArgs e)
